@@ -1,0 +1,278 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #666f80;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title > h1 {
+  margin-bottom: 0;
+}
+
+.title_links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: font-size 200ms ease-out;
+}
+
+.title_links > p {
+  cursor: pointer;
+}
+
+.title_links > span {
+  margin: 0 2px;
+}
+
+.title_links > .active {
+  font-weight: 600;
+  font-size: 1.1em;
+  text-decoration: underline;
+}
+
+.view_leaderboard {
+  margin-right: 30px;
+}
+
+main {
+  height: 480px;
+  width: 480px;
+  position: relative;
+}
+
+#spelbord {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+#spelbord div {
+  height: 50px;
+  width: 50px;
+  background-color: #edeff5;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  cursor: default;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+select {
+  color: #666f80;
+  background-color: rgba(0, 0, 0, 0);
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: inherit;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  text-indent: 16px;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+}
+
+.leaderboard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 130%;
+  width: 130%;
+  background-color: #edeff5;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 6px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 300ms 100ms ease-out;
+  opacity: 0;
+  z-index: -1;
+}
+
+.leaderboard > h1 {
+  margin-top: 80px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.leaderboard-showing {
+  opacity: 1;
+  z-index: 1;
+}
+
+.leaderboard-hiding {
+  transition: opacity 300ms ease-out, z-index 0ms 300ms;
+}
+
+.close_leaderboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  cursor: pointer;
+}
+
+.close_leaderboard-active {
+  z-index: 2;
+}
+
+.reset {
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 300ms 500ms ease-out;
+}
+
+.reset-animate {
+  opacity: 1;
+}
+
+.reset:hover {
+  text-decoration: underline;
+}
+
+.user {
+  margin-bottom: 40px;
+  padding: 16px;
+  background-color: #d3d8e6;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.place {
+  font-size: 24px;
+}
+.username,
+.score {
+  font-size: 18px;
+}
+
+#p1 {
+  margin-top: 80px;
+}
+
+#p1 .username,
+.score {
+  font-size: 30px;
+}
+
+#p1 .place {
+  font-size: 36px;
+}
+
+#p2 {
+  width: 70%;
+}
+
+#p2 .place {
+  font-size: 30px;
+}
+
+#p2 .username,
+.score {
+  font-size: 24px;
+}
+
+#p3 {
+  width: 60%;
+}
+
+.eindbericht {
+  width: 100%;
+  text-align: center;
+}
+
+.naam {
+  border: 0;
+  background-color: #edeff5;
+  padding: 10px;
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+}
+
+.naam:focus,
+.naam_verzenden:focus {
+  outline: none;
+}
+
+.naam_verzenden {
+  border: 0;
+  background-color: #29dbbe;
+  padding: 10px;
+  border-radius: 0 8px 8px 0;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+.correct {
+  background-color: #29dbbe !important;
+  color: white !important;
+}
+
+.incorrect {
+  background-color: #f27171 !important;
+  color: white !important;
+}
+
+.binnenkant.incorrect {
+  background-color: #f2bb71 !important;
+}
+
+.incorrect > select {
+  color: white !important;
+}
+
+.onzichtbaar {
+  background-color: initial !important;
+}
+
+.donkerder {
+  background-color: #d3d8e6 !important;
+}
